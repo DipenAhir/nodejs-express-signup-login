@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<header></header>
+
+<body>
+    {{>header}}
+
+    <div class="container">
+        <div class="col-md-6 mx-auto text-center">
+            <div class="header-title">
+                <h1 class="wv-heading--title">
+                    Home page!
+                </h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mx-auto">
+                <div class="myform form ">
+                    <center>
+                        <p id="updateErrorMsg" style="color: red;">{{errorMsg}}</p>
+                    </center>
+                    <center>
+                        <p id="updateSuccessMsg" style="color:green;">{{successMsg}}</p>
+                    </center>
+                    <hr>
+                    <form action="name" method="post" name="updateName">
+                        <div class="form-group">
+                            <samp>Email : {{Email}}</samp><br>
+                            <samp>Name : {{Name}}</samp>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="name" class="form-control my-input" required placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="hidden" name="email" value="{{Email}}">
+                        </div>
+                        <div class="text-center ">
+                            <button type="submit" class=" btn btn-block send-button tx-tfm">Update Name</button>
+                        </div>
+                    </form>
+                    <div class="form-group">
+                    </div>
+                    <hr>
+                    <br>
+                    <form action="/password" method="POST">
+                        <div class="form-group">
+                            <input type="hidden" name="email" value="{{Email}}">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" min="0" required name="currentPassword" class="form-control my-input"
+                                placeholder="Current Password">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" min="0" required id="updatePassword" name="password"
+                                onformchange="checkpwdUpdate()" onkeyup="checkpwdUpdate()" class="form-control my-input"
+                                placeholder="Password">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" min="0" required name="updateConfrimPassword"
+                                id="updateConfrimPassword" onformchange="checkpwdUpdate()" onkeyup="checkpwdUpdate()"
+                                class="form-control my-input" placeholder="Confrim Password">
+                        </div>
+                        <div class="text-center ">
+                            <button type="submit" id="updatepassword" class=" btn btn-block send-button tx-tfm">Update
+                                Password</button>
+                        </div>
+                    </form>
+                    <div class="form-group">
+                       <center> <a href="/">Logout</a></center>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{>footer}}
+</body>
+
+</html>
